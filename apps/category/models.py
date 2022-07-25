@@ -20,6 +20,11 @@ class Category(models.Model):
         max_length=255,
         unique=True
         )
+    parent = models.ForeignKey(
+        'self',
+        on_delete=models.CASCADE,
+        related_name='children'
+    )
 
     def __str__(self):
         return self.title

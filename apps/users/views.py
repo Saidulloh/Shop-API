@@ -16,3 +16,23 @@ class UserAPIView(generics.ListAPIView):
 class UserProfileAPIView(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserFullSerializer
+
+
+class UserCreateAPIView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserFullSerializer
+
+
+class UserDetailAPIView(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserFullSerializer
+
+
+class UserDeleteAPIView(generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserUpdateAPIView(generics.UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserFullSerializer
